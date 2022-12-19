@@ -1,40 +1,47 @@
-html {
-    height: 4000px;
-}
-
 body {
-    background-color: rgb(109, 84, 53);
+    overscroll-behavior: none;
+    height: 100vh;
 }
 
 .container {
-    position: relative;
-}
-
-.bone-container {
-    height: 4000px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.bone {
-    position: absolute;
-    height: 300px;
-    width: 300px;
-}
-
-.fixed-container {
-    height: 300px;
-    width: 100%;
-
-    margin-top: 300px;
+    overscroll-behavior: none;
+    width: 600%;
+    height: 100%;
     display: flex;
+    flex-wrap: nowrap;
+}
+
+.panel {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .benny {
-    height: 100%;
-    margin: 0 auto;
-    z-index: 10;
+    height: 500px;
+    width: auto;
+}
+
+.blue {
+    background-color: rgb(29, 35, 125);
+}
+
+.red {
+    background-color: rgb(122, 18, 18);
+}
+
+.orange {
+    background-color: rgb(210, 110, 11);
+}
+
+.purple {
+    background-color: rgb(119, 60, 203);
+}
+
+.green {
+    background-color: rgb(18, 98, 11);
 }

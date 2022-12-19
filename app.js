@@ -1,19 +1,16 @@
-bones = document.querySelectorAll(".bone");
-
-bones.forEach((bone) => {
-    bone.style.top = `${Math.floor(Math.random() * 2000)}px`;
-    bone.style.left = `${Math.floor(Math.random() * 1000)}px`;
-    let size = Math.floor(Math.random() * 300);
-    bone.style.height = `${size}px`;
-    bone.style.width = `${size}px`;
-});
-
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(".bone", {
-    scrollTrigger: {
-        scrub: true,
-    },
+let sections = gsap.utils.toArray(".panel");
 
-    y: () => -ScrollTrigger.maxScroll(window) * 0.2,
+gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".container",
+        pin: true,
+        scrub: 1,
+        snap: 1 / (sections.length - 1),
+        // base vertical scrolling on how wide the container is so it feels more natural.
+        end: "+=4000",
+    },
 });
